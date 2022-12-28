@@ -4,7 +4,7 @@ const app = express();
 // The service port defaults to 3000 or is read from the program arguments
 const port = process.argv.length > 2 ? process.argv[2] : 3000;
 
-// Server up the static content
+// Serve up the static content
 app.use(express.static('public'));
 
 // Provide the version of the application
