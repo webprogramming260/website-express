@@ -46,7 +46,16 @@
     <div>
       <p>Welcome to your</p>
       <p class="name">Web Programming <span class="courseNum">260</span></p>
-      <p>server</p>
+      <p id="serviceName">website</p>
     </div>
+
+    <script>
+      fetch('/config')
+        .then((r) => r.json())
+        .then((config) => {
+          const serviceNameEl = document.querySelector('#serviceName');
+          serviceNameEl.textContent = config.name;
+        });
+    </script>
   </body>
 </html>
